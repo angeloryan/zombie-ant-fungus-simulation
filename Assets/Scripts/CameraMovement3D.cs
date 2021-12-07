@@ -12,13 +12,12 @@ public class CameraMovement3D : MonoBehaviour
     private bool shiftKeyPressed;
 
     Transform t;
-
-    [SerializeField]
     float speed;
 
     // Start is called before the first frame update
     void Start()
     {
+        speed = 0.2f;
         t = GetComponent<Transform>();
     }
 

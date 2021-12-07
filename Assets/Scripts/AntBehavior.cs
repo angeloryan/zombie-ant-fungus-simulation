@@ -5,28 +5,31 @@ using UnityEngine;
 public class AntBehavior : MonoBehaviour
 {
     Rigidbody rb;
-    Transform t;
+    Vector3 forwardDirection;
+    Vector3 targetDirection;
+    float speed;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        t = GetComponent<Transform>();
+        forwardDirection = transform.forward.normalized;
+        targetDirection = forwardDirection;
+        speed = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // Updates current direction the ant is facing
+        forwardDirection = transform.forward.normalized;
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    private void FixedUpdate()
+    private void OnTriggerEnter(Collider other)
     {
-        if (t.position.x > 10 || t.position.x < -10 || t.position.z > 10 || t.position.z < -10)
-        {
-            t.Rotate(new Vector3(0, t.rotation.y + 1, 0));
-        }
-
-        t.Translate(transform.forward * Time.deltaTime);
+        targetDirection = Vector3.Reflect(forwardDirection, other.transform.position.normalized).normalized;
+        transform.rotation = Quaternion.LookRotation(targetDirection);
     }
+
 }
