@@ -97,7 +97,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 32
   m_CollisionDetection: 0
 --- !u!65 &5132538306947616227
 BoxCollider:
@@ -124,4 +124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b3288cfe627564a979bbe09e9c2876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  forwardDirection: {x: 0, y: 0, z: 0}
+  targetDirection: {x: 0, y: 0, z: 0}
+  idealAreaDirection: {x: 0, y: 0, z: 0}
+  sporeEffect: {fileID: 5898136234435357251, guid: 72b7efa017067ea458deda4865bba2fe,
+    type: 3}
+  speed: 0
+  sprouted: 0
+  idealConditions: 0
   infected: 0

@@ -82,32 +82,32 @@ public class CameraMovement3D : MonoBehaviour
     private void FixedUpdate()
     {   
         // Checks to see if key is pressed
-        if (wKeyPressed && t.position.z < 25)
+        if (wKeyPressed)
         {
             t.position = new Vector3(t.position.x, t.position.y, t.position.z + speed);
         }
 
-        if (aKeyPressed && t.position.x > -25)
+        if (aKeyPressed)
         {
             t.position = new Vector3(t.position.x - speed, t.position.y, t.position.z);
         }
 
-        if (sKeyPressed && t.position.z > -25)
+        if (sKeyPressed)
         {
             t.position = new Vector3(t.position.x, t.position.y, t.position.z - speed);
         }
 
-        if (dKeyPressed && t.position.x < 25)
+        if (dKeyPressed)
         {
             t.position = new Vector3(t.position.x + speed, t.position.y, t.position.z);
         }
 
-        if (spaceKeyPressed && t.position.y < 25)
+        if (spaceKeyPressed)
         {
             t.position = new Vector3(t.position.x, t.position.y + speed, t.position.z);
         }
 
-        if (shiftKeyPressed && t.position.y > 0)
+        if (shiftKeyPressed)
         {
             t.position = new Vector3(t.position.x, t.position.y - speed, t.position.z);
         }
