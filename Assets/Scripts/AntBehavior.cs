@@ -9,6 +9,9 @@ public class AntBehavior : MonoBehaviour
     Vector3 targetDirection;
     float speed;
 
+    [SerializeField]
+    public bool infected;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,14 +19,17 @@ public class AntBehavior : MonoBehaviour
         forwardDirection = transform.forward.normalized;
         targetDirection = forwardDirection;
         speed = 5;
+        infected = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Updates current direction the ant is facing
-        forwardDirection = transform.forward.normalized;
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if (!infected)
+        {
+            forwardDirection = transform.forward.normalized;
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
