@@ -35,37 +35,38 @@ public class AntBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!infected)
+        if(!sprouted)
         {
-            forwardDirection = transform.forward.normalized;
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        }
-        else
-        {
-            if (transform.position.y > 12)
+            if (!infected)
             {
-                idealConditions = true;
-            }
-
-            if (idealConditions) 
-            {
-                rb.constraints = RigidbodyConstraints.FreezePosition;
-                rb.constraints = RigidbodyConstraints.FreezeRotation;
-
-                if (!sprouted)
-                {
-                    Instantiate(sporeEffect, transform.position, Quaternion.LookRotation(Vector3.right));
-                    sprouted = true;
-                }
+                forwardDirection = transform.forward.normalized;
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
             else
             {
-                targetDirection = (idealAreaDirection - transform.position).normalized;
+                if (transform.position.y > 12)
+                {
+                    idealConditions = true;
+                }
 
-                if (!atTree)
-                    transform.rotation = Quaternion.LookRotation(targetDirection);
+                if (idealConditions && !sprouted)
+                {
+                    rb.constraints = RigidbodyConstraints.FreezePosition;
+                    rb.constraints = RigidbodyConstraints.FreezeRotation;
+                    rb.isKinematic = true;
 
-                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                    Instantiate(sporeEffect, transform.position, Quaternion.LookRotation(Vector3.right));
+                    sprouted = true;
+                }
+                else
+                {
+                    targetDirection = (idealAreaDirection - transform.position).normalized;
+
+                    if (!atTree)
+                        transform.rotation = Quaternion.LookRotation(targetDirection);
+
+                    transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                }
             }
         }
     }
