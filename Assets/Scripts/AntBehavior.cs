@@ -8,14 +8,18 @@ public class AntBehavior : MonoBehaviour
     public Vector3 forwardDirection;
     public Vector3 targetDirection;
     public Vector3 idealAreaDirection;
-    public GameObject sporeEffect;
     public float speed;
     public bool sprouted;
     public bool idealConditions;
     public bool atTree;
+    public float treeRadius;
 
     [SerializeField]
     public bool infected;
+    [SerializeField]
+    public GameObject sporeEffect;
+    [SerializeField]
+    public GameObject fungus;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +27,8 @@ public class AntBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         forwardDirection = transform.forward.normalized;
         targetDirection = forwardDirection;
-        idealAreaDirection = new Vector3(-26, 0, 7);
+        idealAreaDirection = new Vector3(-26, 2, 7);
+        treeRadius = .5f;
         speed = 5;
         sprouted = false;
         atTree = false;
@@ -55,7 +60,8 @@ public class AntBehavior : MonoBehaviour
                     rb.constraints = RigidbodyConstraints.FreezeRotation;
                     rb.isKinematic = true;
 
-                    Instantiate(sporeEffect, transform.position, Quaternion.LookRotation(Vector3.right));
+                    Instantiate(fungus, transform.position - new Vector3(0.25f, -0.5f, -0.2f), Quaternion.LookRotation(new Vector3(1, -3, 0)));
+                    Instantiate(sporeEffect, new Vector3(transform.position.x + .5f, transform.position.y, transform.position.z), Quaternion.LookRotation(Vector3.right));
                     sprouted = true;
                 }
                 else
@@ -75,13 +81,13 @@ public class AntBehavior : MonoBehaviour
     {
         if (!idealConditions)
         {
-            if (infected && other.gameObject.CompareTag("Tree"))
+            Debug.Log(other.gameObject.tag);
+            if (infected && other.transform.gameObject.CompareTag("Tree"))
             {
-                Debug.Log("climbing");
-                //rb.useGravity = false;
+                rb.useGravity = false;
                 atTree = true;
                 rb.constraints = ~RigidbodyConstraints.FreezeRotationY;
-                transform.rotation = Quaternion.LookRotation(Vector3.up);
+                transform.rotation = Quaternion.LookRotation(new Vector3(-1, 1000, 0));
             }
             else if (!sprouted)
             {
@@ -93,7 +99,6 @@ public class AntBehavior : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("Particle Collision!");
         infected = true;
     }
 
