@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 291
     height: 716
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -222,9 +222,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9cedffff
-      m_LastClickedID: -4708
-      m_ExpandedIDs: 6cfbfffff6330000
+      m_SelectedIDs: 64330000
+      m_LastClickedID: 13156
+      m_ExpandedIDs: 6cfbfffff63300000e34000018340000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -313,9 +313,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 13.871803, y: 8.052645, z: -9.693867}
+    m_Target: {x: -11.173475, y: 13.155755, z: -5.6649084}
     speed: 2
-    m_Value: {x: 13.871803, y: 8.052645, z: -9.693867}
+    m_Value: {x: -11.173475, y: 13.155755, z: -5.6649084}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -363,11 +363,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.14747323, y: 0.102778226, z: -0.0153588485, w: -0.9836448}
     speed: 2
-    m_Value: {x: -0.14747323, y: 0.102778226, z: -0.015358849, w: -0.9836448}
+    m_Value: {x: -0.14746551, y: 0.10277285, z: -0.015358045, w: -0.9835933}
   m_Size:
-    m_Target: 17.34239
+    m_Target: 3.6055326
     speed: 2
-    m_Value: 17.34239
+    m_Value: 3.3055327
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -549,20 +549,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SimpleNaturePack/Prefabs
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SimpleNaturePack/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: 64
   m_LastProjectPath: C:\Users\soria\Projects\school\zombie-ant-fungus-simulation
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 26}
-    m_SelectedIDs: d2350000
-    m_LastClickedID: 13778
-    m_ExpandedIDs: 00000000e4340000e6340000e8340000ea340000ec340000ee340000f0340000f2340000f4340000f6340000f8340000fa340000fc340000fe340000003500001c35000000ca9a3b
+    m_SelectedIDs: 8c3d0000
+    m_LastClickedID: 15756
+    m_ExpandedIDs: 000000005e3d0000603d0000623d0000643d0000663d0000683d00006a3d00006c3d00006e3d0000703d0000723d0000743d0000763d0000783d00007a3d00008e3d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -590,7 +590,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e4340000e6340000e8340000ea340000ec340000ee340000f0340000f2340000f4340000f6340000f8340000fa340000fc340000fe3400000035000000ca9a3b
+    m_ExpandedIDs: 000000005e3d0000603d0000623d0000643d0000663d0000683d00006a3d00006c3d00006e3d0000703d0000723d0000743d0000763d0000783d00007a3d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -615,9 +615,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 9cedffff
-    m_LastClickedInstanceID: -4708
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 64330000
+    m_LastClickedInstanceID: 13156
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000ba3c0000303d0000563900005a960000823a0000943a0000ecb80000b48e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
